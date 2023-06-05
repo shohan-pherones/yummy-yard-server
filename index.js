@@ -5,6 +5,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const menuRoutes = require("./routes/menuRoute");
 const testimonialRoutes = require("./routes/testimonialRoute");
+const userRoutes = require("./routes/userRoute");
 
 // express app
 const app = express();
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/menu", menuRoutes);
 app.use("/api/testimonials", testimonialRoutes);
+app.use("/api/user", userRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
